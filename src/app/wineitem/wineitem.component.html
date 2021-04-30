@@ -1,4 +1,4 @@
-<div class="{{wine.isOnSale ? '' : 'wine__card--notOnSale'}} wine__card">
+<div class="wine__card" [ngClass]="{'wine__card--notOnSale': !wine.isOnSale}">
   <img src="{{wine.imageUrl}}" alt="" class="wine__image"/>
   <h2 class="wine__title">{{wine.title | uppercase}}</h2>
   <div *ngIf='!wine.isOnSale' class="wine__notOnSale">
@@ -15,11 +15,11 @@
     <p class="wine__details">[{{food.kcal + 'kcal, vegan: ' + food.vegan + ', gluten: ' + food.gluten}}]</p>
   </div>
   <div class="wine__price">
-    <p>{{wine.price | currency:'EUR':'symbol':'1.2-2' }}</p>
+    <p>{{totalAmount | currency:'EUR':'symbol':'1.2-2' }}</p>
   </div>
   <div class="wine__quantity">
-    <button (click)="decreaseAmount()" [disabled]='wine.quantityInChart === 0 || wine.isOnSale === false'>-</button>
-    <p>{{wine.quantityInChart}}</p>
+    <button *ngIf="quantityInChart > 0" (click)="decreaseAmount()" [disabled]='quantityInChart === 0 || wine.isOnSale === false'>-</button>
+    <p>{{quantityInChart}}</p>
     <button (click)="increaseAmount()" [disabled]='wine.isOnSale === false'>+</button>
   </div>
 </div>

@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+@import './fonts.sass'
+@import './colors.sass'
+@import './breakpoints.sass'
+
+*
+  font-family: $froboto
+  margin: 0
+  padding: 0
+  border: 0
+  box-sizing: border-box
+  color: $c_txt_main
+  @include fallback
+    font-size: $fsize_r
+  @include wearablesAndPhones
+    font-size: $fsize_xs
+  @include tablets
+    font-size: $fsize_s
+  @include hugeDevices
+    font-size: $fsize_l
+
+body
+  background-color: $c_bg_ivory
+  margin: 1rem 0
+
+.main_container
+  @include wearables
+    width: 100vw
+  @include phones
+    width: 97vw
+  @include tablets
+    width: 94vw
+  @include noHD
+    width: 91vw
+  @include SHD
+    width: 86vw
+  @include QHD
+    width: 82vw
+  @include HD4K
+    width: $maxBodyWidth
+
+p
+  margin-bottom: .3rem

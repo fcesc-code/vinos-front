@@ -16,7 +16,15 @@ lib-cov/
 built/
 build/
 build/Release/
-#dist/
+dist/
+out-tsc/
+
+# Only exists if Bazel was run
+bazel-out/
+
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
 
 #Typescript
 typings/
@@ -32,8 +40,11 @@ typings/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/libpeerconnection.log
 *.log
 logs/
+/connect.lock
+testem.log
 
 #caches
 #npm
@@ -45,6 +56,17 @@ logs/
 #webpack
 .cache-loader
 .awcache
+#sass
+/.sass-cache
+
+#IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
 #project media files
 images/
@@ -66,12 +88,12 @@ temp/
 
 #media files
 #images
+#*.ico
 *.ai
 *.apng
 *.bmp
 *.eps
 *.gif
-*.ico
 *.jpg
 *.jpeg
 *.png

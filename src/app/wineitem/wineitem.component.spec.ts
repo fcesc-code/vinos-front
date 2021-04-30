@@ -19,7 +19,12 @@ describe('WineitemComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create wineitemComponent', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render wine__card', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.wine__card')).toBeTruthy();
   });
 });

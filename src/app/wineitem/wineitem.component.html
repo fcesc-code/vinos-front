@@ -6,7 +6,7 @@
   </div>
   <div class="wine__origin">
     <p>{{wine.year}} - {{wine.grapes}}</p>
-    <p>{{wine.country}} - {{wine.region}}</p>
+    <p>{{wine.country}} - <a class="link__discrete" [href]="wineRegionMapLink">{{wine.region}}</a></p>
   </div>
   <p class="wine__motto">{{wine.description}}</p>
   <p>Better served with: </p>
@@ -15,11 +15,15 @@
     <p class="wine__details">[{{food.kcal + 'kcal, vegan: ' + food.vegan + ', gluten: ' + food.gluten}}]</p>
   </div>
   <div class="wine__price">
-    <p>{{totalAmount | currency:'EUR':'symbol':'1.2-2' }}</p>
+    <p><span class="wine__price_unit"><strong>{{wine.price | currency:'EUR':'symbol':'1.2-2' }}</strong> ud.  |  total </span>
+      {{totalAmount | currency:'EUR':'symbol':'1.2-2' }}
+    </p>
   </div>
   <div class="wine__quantity">
     <button *ngIf="quantityInChart > 0" (click)="decreaseAmount()" [disabled]='quantityInChart === 0 || wine.isOnSale === false'>-</button>
-    <p>{{quantityInChart}}</p>
+    <select name="quantitySelector" [(ngModel)]="quantityInChart" (ngModelChange)="updateQuantity($event)">
+      <option [ngValue]="quantity" *ngFor="let quantity of quantitySelector">{{quantity}}</option>
+    </select>
     <button (click)="increaseAmount()" [disabled]='wine.isOnSale === false'>+</button>
   </div>
 </div>

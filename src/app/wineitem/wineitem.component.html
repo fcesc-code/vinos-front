@@ -1,0 +1,25 @@
+<div class="{{wine.isOnSale ? '' : 'wine__card--notOnSale'}} wine__card">
+  <img src="{{wine.imageUrl}}" alt="" class="wine__image"/>
+  <h2>{{wine.title | uppercase}}</h2>
+  <div *ngIf='!wine.isOnSale' class="wine__notOnSale">
+    <p>not on sale</p>
+  </div>
+  <div class="wine__origin">
+    <p>{{wine.year}} - {{wine.grapes}}</p>
+    <p>{{wine.country}} - {{wine.region}}</p>
+  </div>
+  <p>{{wine.description}}</p>
+  <p>Better served with: </p>
+  <div *ngFor="let food of wine.foodMatch; index as i" class="wine__matching.food">
+    <p class="wine__foodMatch">{{food.name}}</p>
+    <p class="wine__details">[{{food.kcal + 'kcal, vegan: ' + food.vegan + ', gluten: ' + food.gluten}}]</p>
+  </div>
+  <div class="wine__price">
+    <p>{{wine.price | currency:'EUR':'symbol':'1.2-2' }}</p>
+  </div>
+  <div class="wine__quantity">
+    <button (click)="decreaseAmount()" [disabled]='wine.quantityInChart === 0 || wine.isOnSale === false'>-</button>
+    <p>{{wine.quantityInChart}}</p>
+    <button (click)="increaseAmount()" [disabled]='wine.isOnSale === false'>+</button>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { IWineItem, IFoodItem } from 'src/interfaces/items.interfaces';
+import { IWineItem } from 'src/interfaces/items.interfaces';
 
 const wineSingleMockData: IWineItem = {
   title : 'Example Wine',
@@ -10,14 +10,21 @@ const wineSingleMockData: IWineItem = {
   price : 20.50,
   imageUrl : './assets/wine_example.png',
   isOnSale : true,
-  quantityInChart : 0
+  quantityInChart : 0,
+  foodMatch: [
+    {
+      name: 'Manchego cheese',
+      kcal: 320,
+      vegan: false,
+      gluten: false
+    },
+    {
+      name: 'Jamón Ibérico',
+      kcal: 450,
+      vegan: false,
+      gluten: false
+    }
+  ]
 };
 
-const foodSingleMockData: IFoodItem = {
-  name: 'Manchego cheese',
-  kcal: 320,
-  vegan: false,
-  gluten: false
-}
-
-export default { wineSingleMockData, foodSingleMockData };
+export { wineSingleMockData };

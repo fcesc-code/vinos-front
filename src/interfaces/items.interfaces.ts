@@ -9,9 +9,10 @@ export interface IWineItem {
   imageUrl: string;
   isOnSale: boolean;
   quantityInChart: number;
+  foodMatch: IFoodItem[];
 }
 
-export interface IFoodItem {
+interface IFoodItem {
   name: string;
   kcal: number;
   vegan: boolean;

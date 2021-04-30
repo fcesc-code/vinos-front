@@ -13,26 +13,27 @@ export class WineitemComponent implements OnInit {
   public wine: IWineItem;
   public quantityInChart: number;
   public totalAmount: number;
+  public quantitySelector: number[];
+  public wineRegionMapLink: string;
 
   constructor() {
     this.wine = wineSingleMockData;
     this.quantityInChart = 0;
     this.totalAmount = 0;
+    this.quantitySelector = Array.from(Array(20).keys());
+    this.wineRegionMapLink = `https://www.google.com/maps/place/${this.wine.region}`;
   }
 
   ngOnInit() {
   }
 
   public increaseAmount(): void {
-    this.wine.quantityInChart++;
     this.quantityInChart++;
     this.totalAmount = this.wine.price * this.quantityInChart;
   }
 
   public decreaseAmount(): void {
-    if (this.wine.quantityInChart !== 0) this.wine.quantityInChart--;
     if (this.quantityInChart > 0) this.quantityInChart--;
     this.totalAmount = this.wine.price * this.quantityInChart;
   }
-
 }

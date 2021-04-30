@@ -1,6 +1,6 @@
 <div class="{{wine.isOnSale ? '' : 'wine__card--notOnSale'}} wine__card">
   <img src="{{wine.imageUrl}}" alt="" class="wine__image"/>
-  <h2>{{wine.title | uppercase}}</h2>
+  <h2 class="wine__title">{{wine.title | uppercase}}</h2>
   <div *ngIf='!wine.isOnSale' class="wine__notOnSale">
     <p>not on sale</p>
   </div>
@@ -8,7 +8,7 @@
     <p>{{wine.year}} - {{wine.grapes}}</p>
     <p>{{wine.country}} - {{wine.region}}</p>
   </div>
-  <p>{{wine.description}}</p>
+  <p class="wine__motto">{{wine.description}}</p>
   <p>Better served with: </p>
   <div *ngFor="let food of wine.foodMatch; index as i" class="wine__matching.food">
     <p class="wine__foodMatch">{{food.name}}</p>

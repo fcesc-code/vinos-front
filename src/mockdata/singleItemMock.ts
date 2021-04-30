@@ -1,4 +1,4 @@
-import { IWineItem, IFoodItem } from 'src/app/interfaces/items.interfaces';
+import { IWineItem, IFoodItem } from 'src/interfaces/items.interfaces';
 
 const wineSingleMockData: IWineItem = {
   title : 'Example Wine',

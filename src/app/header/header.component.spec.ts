@@ -19,15 +19,17 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create headerComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(HeaderComponent);
-    fixture.detectChanges();
+  it('should render header', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('header')).toBeTruthy();
+  });
+
+  it('should have \'vinos\' as header', () => {
+    const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.app_header').textContent).toContain('VINOS');
   });
 });

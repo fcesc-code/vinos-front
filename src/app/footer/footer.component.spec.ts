@@ -19,7 +19,12 @@ describe('FooterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create footerComponent', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render footer', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('footer')).toBeTruthy();
   });
 });

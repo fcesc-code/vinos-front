@@ -21,8 +21,8 @@
   </div>
   <div class="wine__quantity">
     <button *ngIf="quantityInChart > 0" (click)="decreaseAmount()" [disabled]='quantityInChart === 0 || wine.isOnSale === false'>-</button>
-    <select name="quantitySelector" [(ngModel)]="quantityInChart">
-      <option [value]="quantity" *ngFor="let quantity of quantitySelector">{{quantity}}</option>
+    <select name="quantitySelector" [(ngModel)]="quantityInChart" (ngModelChange)="updateQuantity($event)">
+      <option [ngValue]="quantity" *ngFor="let quantity of quantitySelector">{{quantity}}</option>
     </select>
     <button (click)="increaseAmount()" [disabled]='wine.isOnSale === false'>+</button>
   </div>

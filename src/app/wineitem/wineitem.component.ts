@@ -36,4 +36,9 @@ export class WineitemComponent implements OnInit {
     if (this.quantityInChart > 0) this.quantityInChart--;
     this.totalAmount = this.wine.price * this.quantityInChart;
   }
+
+  public updateQuantity(input: number): void {
+    this.quantityInChart = input;
+    this.totalAmount = this.wine.price * this.quantityInChart;
+  }
 }

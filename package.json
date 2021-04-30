@@ -1,0 +1,31 @@
+{
+  "name": "vinos",
+  "description": "Vinoteca, una app de vinos en Angular",
+  "version": "0.0.0",
+  "scripts": {
+  },
+  "private": true,
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcesc-code/uoc-font1-pac4.git"
+  },
+  "keywords": [
+    "Typescript",
+    "MVC",
+    "UOC",
+    "Angular",
+    "Typescript"
+  ],
+  "author": {
+    "name": "Francesc Brugarolas"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fcesc-code/uoc-front1-pac4/issues"
+  },
+  "homepage": "https://github.com/fcesc-code/uoc-front1-pac4#readme"
+}

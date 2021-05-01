@@ -31,7 +31,8 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "winedata.json", "input": "src/mockdata", "output": "mockdata/" }
             ],
             "styles": [
               "src/styles.sass"

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { IWineItem } from '../interfaces/items.interfaces';
 
 @Injectable({
@@ -9,6 +9,7 @@ import { IWineItem } from '../interfaces/items.interfaces';
 })
 export class ProductsService {
   public items: IWineItem[] = [];
+  private mockdataUrl: string = 'mockdata/winedata.json';
 
   constructor(
     private http: HttpClient
@@ -19,9 +20,8 @@ export class ProductsService {
   }
 
   public getProducts(): Observable<IWineItem[]> {
-    return this.http.get<IWineItem[]>('../mockdata/winedata.json')
+    return this.http.get<IWineItem[]>(this.mockdataUrl)
       .pipe(
-        tap( data => console.log('data', JSON.stringify(data)) ),
         catchError( this.handleError )
       );
   }

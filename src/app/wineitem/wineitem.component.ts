@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IWineItem } from '../../interfaces/items.interfaces';
 import { wineSingleMockData } from '../../mockdata/singleItemMock';
 
@@ -10,21 +10,22 @@ import { wineSingleMockData } from '../../mockdata/singleItemMock';
 
 export class WineitemComponent implements OnInit {
 
-  public wine: IWineItem;
+  @Input() public wine: IWineItem;
   public quantityInChart: number;
   public totalAmount: number;
   public quantitySelector: number[];
   public wineRegionMapLink: string;
 
   constructor() {
-    this.wine = wineSingleMockData;
     this.quantityInChart = 0;
     this.totalAmount = 0;
     this.quantitySelector = Array.from(Array(20).keys());
-    this.wineRegionMapLink = `https://www.google.com/maps/place/${this.wine.region}`;
+    this.wineRegionMapLink = '';
+    this.wine = wineSingleMockData;
   }
 
   ngOnInit() {
+    this.wineRegionMapLink = `https://www.google.com/maps/place/${this.wine.region}`;
   }
 
   public increaseAmount(): void {

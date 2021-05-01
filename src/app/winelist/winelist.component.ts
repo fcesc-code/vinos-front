@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { IWineItem } from 'src/interfaces/items.interfaces';
 import { ProductsService } from './../../services/products.service';
 
@@ -10,7 +11,7 @@ import { ProductsService } from './../../services/products.service';
 export class WinelistComponent implements OnInit {
   public products: IWineItem[] = [];
   public errorMessage:string = '';
-  public sub: any;
+  public sub!: Subscription;
 
   constructor(
     private productsService: ProductsService
@@ -25,7 +26,7 @@ export class WinelistComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.sub.unsuscribe();
+    this.sub.unsubscribe();
   }
 
 }

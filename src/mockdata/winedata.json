@@ -24,7 +24,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 2,
@@ -51,7 +51,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 3,
@@ -78,7 +78,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 4,
@@ -105,7 +105,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 5,
@@ -132,7 +132,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 6,
@@ -159,7 +159,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 7,
@@ -186,7 +186,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 8,
@@ -213,7 +213,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 9,
@@ -240,7 +240,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 10,
@@ -267,7 +267,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 11,
@@ -294,7 +294,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 12,
@@ -321,7 +321,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 13,
@@ -348,7 +348,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 14,
@@ -375,7 +375,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 15,
@@ -402,7 +402,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 16,
@@ -429,7 +429,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 17,
@@ -456,7 +456,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 18,
@@ -483,7 +483,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 19,
@@ -510,7 +510,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 20,
@@ -537,7 +537,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 21,
@@ -564,7 +564,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 22,
@@ -591,7 +591,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 22,
@@ -618,7 +618,7 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   },
   {
       "_id": 23,
@@ -645,6 +645,6 @@
       "gluten": false
     }
   ], 
-      "image": "wine_example.png"
+      "imageUrl": "wine_example.png"
   }
 ]

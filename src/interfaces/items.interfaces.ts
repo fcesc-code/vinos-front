@@ -9,7 +9,7 @@ export interface IWineItem {
   price: number;
   imageUrl: string;
   isOnSale: boolean;
-  quantityInChart: number;
+  quantityInCart: number;
   foodMatch: IFoodItem[];
 }
 
@@ -21,6 +21,6 @@ interface IFoodItem {
 }
 
 export interface IProductChange {
-  id: string,
+  id: number,
   newQuantity: number
 }

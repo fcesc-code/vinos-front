@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { WineitemComponent } from './wineitem/wineitem.component';
 import { WinelistComponent } from './winelist/winelist.component';
+import { StarComponent } from './star/star.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { WinelistComponent } from './winelist/winelist.component';
     HeaderComponent,
     FooterComponent,
     WineitemComponent,
-    WinelistComponent
+    WinelistComponent,
+    StarComponent
   ],
   imports: [
     BrowserModule,

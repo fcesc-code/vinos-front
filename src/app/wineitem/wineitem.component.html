@@ -20,8 +20,8 @@
     </p>
   </div>
   <div class="wine__quantity" *ngIf="wine.isOnSale">
-    <button *ngIf="quantityInChart > 0" (click)="decreaseAmount()" [disabled]='quantityInChart === 0'>-</button>
-    <textarea name="display__quantity" rows="1" cols="2" readonly [(ngModel)]="quantityInChart">{{quantityInChart}}</textarea>
+    <button *ngIf="wine.quantityInCart > 0" (click)="decreaseAmount()" [disabled]='wine.quantityInCart === 0'>-</button>
+    <textarea name="display__quantity" rows="1" cols="2" readonly>{{wine.quantityInCart}}</textarea>
     <button (click)="increaseAmount()">+</button>
   </div>
 </div>

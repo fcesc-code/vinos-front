@@ -15,7 +15,22 @@ export class WineitemComponent implements OnInit {
   public totalAmount: number = 0;
   public wineRegionMapLink: string  = '';
 
-  constructor() { }
+  constructor() {
+    this.wine = {
+      _id: 0,
+      title: '',
+      year: 0,
+      grapes: '',
+      country: '',
+      region: '',
+      description: '',
+      price: 0,
+      imageUrl: '',
+      isOnSale: false,
+      quantityInCart: 0,
+      foodMatch: []
+    }
+  }
 
   ngOnInit() {
     this.wineRegionMapLink = `https://www.google.com/maps/place/${this.wine.region}`;

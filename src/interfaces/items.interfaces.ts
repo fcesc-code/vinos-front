@@ -1,4 +1,5 @@
 export interface IWineItem {
+  _id: number;
   title: string;
   year: number;
   grapes: string;
@@ -8,7 +9,7 @@ export interface IWineItem {
   price: number;
   imageUrl: string;
   isOnSale: boolean;
-  quantityInChart: number;
+  quantityInCart: number;
   foodMatch: IFoodItem[];
 }
 
@@ -17,4 +18,9 @@ interface IFoodItem {
   kcal: number;
   vegan: boolean;
   gluten: boolean;
+}
+
+export interface IProductChange {
+  id: number,
+  newQuantity: number
 }

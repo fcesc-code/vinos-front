@@ -1,3 +1,5 @@
-<div class="wine__list" *ngFor="let product of filteredProducts">
-  <app-wineitem [wine]="product" (wineQuantityChange)="onWineQuantityChange($event)"></app-wineitem>
+<div class="wine__list">
+  <div *ngFor="let product of filteredProducts">
+    <app-wineitem [wine]="product" (wineQuantityChange)="onWineQuantityChange($event)"></app-wineitem>
+  </div>
 </div>

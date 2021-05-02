@@ -1,0 +1,32 @@
+@import './../../fonts.sass'
+@import './../../colors.sass'
+
+.star__icon--full
+  color: #999999
+  font-size: $fsize_l
+  content: '\2606'
+  position: relative
+  &::before
+    color: #ffd801
+    font-size: $fsize_l
+    content: '\2605'
+    position: absolute
+    overflow: hidden
+
+.star__icon--empty
+  color: #999999
+  font-size: $fsize_l
+  content: '\2606'
+
+.star__icon--half
+  color: #999999
+  font-size: $fsize_l
+  content: '\2606'
+  position: relative
+  &::before
+    color: #ffd801
+    width: 50%
+    font-size: $fsize_l
+    content: '\2605'
+    position: absolute
+    overflow: hidden

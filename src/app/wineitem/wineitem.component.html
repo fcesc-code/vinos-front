@@ -2,8 +2,9 @@
   <img [src]="'assets/' + wine.imageUrl" alt="" class="wine__image"/>
   <h2 class="wine__title">{{wine.title | uppercase}}</h2>
   <div *ngIf='!wine.isOnSale' class="wine__notOnSale">
-    <p>not on sale</p>
+    <p>currently not on sale</p>
   </div>
+  <app-star [rating]='wine.rating'></app-star>
   <div class="wine__origin">
     <p>{{wine.year}} - {{wine.grapes}}</p>
     <p>{{wine.country}} - <a class="link__discrete" [href]="wineRegionMapLink">{{wine.region}}</a></p>

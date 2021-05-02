@@ -1,4 +1,5 @@
 export interface IWineItem {
+  _id: number;
   title: string;
   year: number;
   grapes: string;
@@ -17,4 +18,9 @@ interface IFoodItem {
   kcal: number;
   vegan: boolean;
   gluten: boolean;
+}
+
+export interface IProductChange {
+  id: string,
+  newQuantity: number
 }

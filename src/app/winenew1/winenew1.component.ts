@@ -44,6 +44,7 @@ export class Winenew1Component {
       this.messages.current = this.messages.createSuccess;
       this.messages.class = this.messages.classSuccess;
       this.wine = wineForm.value.newWine;
+      console.warn('PAC5 temporary. This is the new wine', this.wine);
     }
   }
 

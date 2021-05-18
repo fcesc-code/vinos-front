@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Winenew1Component } from './winenew1.component';
+import { Winenew2Component } from './winenew2.component';
 
 describe('WinenewComponent', () => {
-  let component: Winenew1Component;
-  let fixture: ComponentFixture<Winenew1Component>;
+  let component: Winenew2Component;
+  let fixture: ComponentFixture<Winenew2Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Winenew1Component ]
+      declarations: [ Winenew2Component ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Winenew1Component);
+    fixture = TestBed.createComponent(Winenew2Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

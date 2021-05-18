@@ -1,0 +1,167 @@
+@import './../../fonts.sass'
+@import './../../colors.sass'
+
+.wine__card
+  border: 1px solid #bbbbbb
+  border-radius: .5rem
+  color: #444444
+  margin: .5rem 0
+  padding: 1.5rem 1.5rem
+  max-width: 350px
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+
+  & > h2
+    letter-spacing: 1.1px
+
+.wine__card--notOnSale
+  background-color: #eeeeee
+
+.wine__notOnSale
+  color: #ff2222
+  font-weight: 600
+
+  & > p
+    margin-top: -1rem
+
+.wine__matchingFood
+  font-size: .9rem
+  margin-bottom: 1rem
+
+.wine__origin
+  font-style: italic
+  margin: .5rem 0
+  & > p
+    font-size: $fsize_s
+
+.wine__price
+  font-weight: bold
+  font-size: 1.25rem
+  & p
+    color: $c_siena
+    margin: .8rem 0 1rem 0
+    font-size: $fsize_l
+
+.wine__price_unit
+  font-size: 1rem
+  color: #666
+  font-weight: normal
+
+.wine__quantity
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+
+  & > p
+    margin: 0 1rem
+
+  & > input
+    padding: 0 .5rem
+    margin: 0
+    width: 1rem
+    text-align: center
+    border: 0px
+
+  & > button
+    background-color: #eeeeee
+    color: black
+    font-weight: bold
+    border: 1px solid #666666
+    border-radius: .3rem
+    min-width: 1.5rem
+
+    &:hover
+      background-color: #666666
+      color: white
+      font-weight: bold
+
+.wine__details
+  color: #999999
+  font-size: .8rem
+  margin-top: .2rem
+
+.wine__foodMatch
+  margin: .5rem 0 0 0
+
+.wine__motto
+  margin: 1rem 0
+
+.wine__title
+  margin: 1rem 0
+
+textarea[name=display__quantity]
+  text-align: center
+  resize: none
+
+.wine__image
+  max-height: 12rem
+
+.link__discrete
+  text-decoration: none
+  &:hover, 
+  &:active, 
+  &:focus
+    color: #f74747
+    text-decoration: underline 1px dashed #f74747
+
+.message--error
+  color: $c_redflag
+
+.message--success
+  color: $c_greenflag
+
+.message--error, .message-success
+  margin: 1rem 0
+
+.formControl
+  width: 80%
+  display: block
+  border: 1px $c_bg_lightgray solid
+  border-radius: .25rem
+
+.formFieldset
+  border: 1px $c_bg_charcoal solid
+  border-radius: .5rem
+  padding: .5rem
+  margin: .5rem
+
+.dev__information
+  margin-top: 1rem
+
+button
+  padding: .5rem 1rem
+  border-radius: .25rem
+  border: 1px $c_bg_lightgray solid
+  &:hover, &:focus
+    background: $c_txt_darkbluish
+    color: $c_bg_ivory
+
+.wineForm__title
+  margin-bottom: 1rem
+
+.secondary
+  font-style: italic
+  color: $c_bg_charcoal
+  font-size: .9em
+  align-self: flex-start
+  margin-left: 10%
+
+label
+  align-self: flex-start
+  margin-top: .25rem
+
+.withMargin
+  margin-left: 10%
+
+input[type="checkbox"]
+  align-self: flex-start
+  width: 1rem
+
+.fullWidth
+  width: 100%
+
+.noMargin
+  margin: 0

@@ -1,0 +1,42 @@
+<form (ngSubmit)="createWine(thisForm)" #thisForm="ngForm">
+  <div class="wine__card" ngModelGroup="newWine">
+    <h2 class="wineForm__title">New wine</h2>
+    <p class="secondary">* Required fields</p>
+    <label for="foodMatch" class="withMargin">ImgUrl*</label>
+    <input type="text" id="imgUrl" class="formControl" name="imgUrl" ngModel required>
+    <label for="foodMatch" class="withMargin">Title*</label>
+    <input type="text" id="title" class="formControl" name="title" ngModel required>
+    <label for="year" class="withMargin">Year*</label>
+    <input type="number" id="year" class="formControl" name="year" ngModel required>
+    <label for="grapes" class="withMargin">Grape*</label>
+    <input type="text" id="grapes" class="formControl" name="grapes" ngModel required>
+    <label for="country" class="withMargin">Country*</label>
+    <input type="text" id="country" class="formControl" name="country" ngModel required>
+    <label for="motto" class="withMargin">Description of the wine</label>
+    <input type="text" id="motto" class="formControl" name="motto" ngModel>
+    <label for="price" class="withMargin">Price*</label>
+    <input type="number" id="price" class="formControl" name="price" ngModel required>
+    <label for="rating" class="withMargin">Predefined rating (1 to 5)</label>
+    <input type="number" id="rating" class="formControl" name="rating" ngModel>
+    <label for="isOnSale" class="withMargin">Is on sale</label>
+    <input type="checkbox" id="isonSale" class="formControl withMargin" name="isonSale" ngModel>
+    <fieldset class="formFieldset">
+      <legend>Matching food</legend>
+      <label for="foodMatch">Food description</label>
+      <input type="text" id="foodMatch" class="formControl fullWidth" name="foodMatch" ngModel>
+      <label for="food">Approximate calories for 1 portion</label>
+      <input type="number" id="foodKcal" class="formControl fullWidth" name="foodKcal" ngModel>
+      <label for="foodVegan">Is it vegan?</label>
+      <input type="checkbox" id="foodVegan" class="formControl" name="foodVegan" ngModel>
+      <label for="foodGluten">Does it contain gluten?</label>
+      <input type="checkbox" id="foodGluten" class="formControl" name="foodGluten" ngModel>
+    </fieldset>
+    <button type="submit">Create new wine</button>
+    <h2 class="{{ this.messages.class }}">{{ this.messages.current }}</h2>
+    <div class="dev__information">
+      <h2>Only for educational and check purposes</h2>
+      <p class="secondary noMargin">Form value:</p>
+      <p class="secondary noMargin">{{ thisForm.value.newWine | json }}</p>
+    </div>
+  </div>
+</form>

@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { WineitemComponent } from './wineitem/wineitem.component';
 import { WinelistComponent } from './winelist/winelist.component';
+import { Winenew1Component } from './winenew1/winenew1.component';
 import { StarComponent } from './star/star.component';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { StarComponent } from './star/star.component';
     FooterComponent,
     WineitemComponent,
     WinelistComponent,
+    Winenew1Component,
     StarComponent
   ],
   imports: [

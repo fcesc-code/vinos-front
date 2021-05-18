@@ -1,0 +1,55 @@
+<form (ngSubmit)="createWine(thisForm)" #thisForm="ngForm">
+  <div class="wine__card" ngModelGroup="newWine">
+    <h2 class="wineForm__title">New wine</h2>
+    <p class="secondary">* Required fields</p>
+    <label for="imgUrl" class="withMargin">ImgUrl*</label>
+    <input type="text" id="imgUrl" #wineImgUrl="ngModel" class="formControl" name="imgUrl" ngModel required pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$">
+    <div class="message--error">
+      <p *ngIf="(wineImgUrl.dirty || wineImgUrl.touched) && wineImgUrl.invalid">The URL path must be a valid format</p>
+      <p *ngIf="(wineImgUrl.dirty || wineImgUrl.touched) && wineImgUrl.errors?.required">The URL image is required</p>
+    </div>
+    <label for="title" class="withMargin">Title*</label>
+    <input type="text" id="title" #wineTitle="ngModel" class="formControl" name="title" ngModel required>
+    <div class="message--error">
+      <p *ngIf="(wineTitle.dirty || wineTitle.touched) && wineTitle.errors?.required">The wine title is required</p>
+    </div>
+    <label for="year" class="withMargin">Year*</label>
+    <input type="number" id="year" #wineYear="ngModel" class="formControl" name="year" ngModel required>
+    <div class="message--error">
+      <p *ngIf="(wineYear.dirty || wineYear.touched) && wineYear.errors?.required">The wine year is required</p>
+    </div>
+    <label for="grapes" class="withMargin">Grape</label>
+    <input type="text" id="grapes" class="formControl" name="grapes" ngModel>
+    <label for="country" class="withMargin">Country</label>
+    <input type="text" id="country" class="formControl" name="country" ngModel>
+    <label for="motto" class="withMargin">Description of the wine</label>
+    <input type="text" id="motto" class="formControl" name="motto" ngModel>
+    <label for="price" class="withMargin">Price*</label>
+    <input type="number" id="price" #winePrice="ngModel" class="formControl" name="price" ngModel required>
+    <div class="message--error">
+      <p *ngIf="(winePrice.dirty || winePrice.touched) && winePrice.errors?.required">The wine price is required</p>
+    </div>
+    <label for="rating" class="withMargin">Predefined rating (1 to 5)</label>
+    <input type="number" id="rating" class="formControl" name="rating" ngModel>
+    <label for="isOnSale" class="withMargin">Is on sale</label>
+    <input type="checkbox" id="isonSale" class="formControl withMargin" name="isonSale" ngModel>
+    <fieldset class="formFieldset">
+      <legend>Matching food</legend>
+      <label for="foodMatch">Food description</label>
+      <input type="text" id="foodMatch" class="formControl fullWidth" name="foodMatch" ngModel>
+      <label for="food">Approximate calories for 1 portion</label>
+      <input type="number" id="foodKcal" class="formControl fullWidth" name="foodKcal" ngModel>
+      <label for="foodVegan">Is it vegan?</label>
+      <input type="checkbox" id="foodVegan" class="formControl" name="foodVegan" ngModel>
+      <label for="foodGluten">Does it contain gluten?</label>
+      <input type="checkbox" id="foodGluten" class="formControl" name="foodGluten" ngModel>
+    </fieldset>
+    <button type="submit">Create new wine</button>
+    <h2 class="{{ this.messages.class }}">{{ this.messages.current }}</h2>
+    <div class="dev__information">
+      <h2>Only for development and check purposes</h2>
+      <p class="secondary noMargin">Form value:</p>
+      <p class="secondary noMargin">{{ thisForm.value.newWine | json }}</p>
+    </div>
+  </div>
+</form>

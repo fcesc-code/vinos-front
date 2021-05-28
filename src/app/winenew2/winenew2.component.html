@@ -1,0 +1,55 @@
+<form (ngSubmit)="createWine()" [formGroup]="newWineForm">
+  <div class="wine__card" ngModelGroup="newWine">
+    <h2 class="wineForm__title">New wine (reactive form)</h2>
+    <p class="secondary">* Required fields</p>
+    <label for="imgUrl" class="withMargin">ImgUrl*</label>
+    <input type="text" id="imgUrl" class="formControlStyle" formcontrolname="imgUrl" name="imgUrl">
+    <div class="message--error">
+      <p *ngIf="(newWineForm.get('imgUrl')?.dirty || newWineForm.get('imgUrl')?.touched) && newWineForm.get('imgUrl')?.invalid">The URL path must be a valid format</p>
+      <p *ngIf="(newWineForm.get('imgUrl')?.dirty || newWineForm.get('imgUrl')?.touched) && newWineForm.get('imgUrl')?.errors?.required">The URL image is required</p>
+    </div>
+    <label for="title" class="withMargin">Title*</label>
+    <input type="text" id="title" class="formControlStyle" formcontrolname="title" name="title">
+    <div class="message--error">
+      <p *ngIf="(newWineForm.get('title')?.dirty || newWineForm.get('title')?.touched) && newWineForm.get('title')?.errors?.required">The wine title is required</p>
+    </div>
+    <label for="year" class="withMargin">Year*</label>
+    <input type="number" id="year" class="formControlStyle" formcontrolname="year" name="year">
+    <div class="message--error">
+      <p *ngIf="(newWineForm.get('year')?.dirty || newWineForm.get('year')?.touched) && newWineForm.get('year')?.errors?.required">The wine year is required</p>
+    </div>
+    <label for="grapes" class="withMargin">Grape</label>
+    <input type="text" id="grapes" class="formControlStyle" formcontrolname="grapes" name="grapes">
+    <label for="country" class="withMargin">Country</label>
+    <input type="text" id="country" class="formControlStyle" formcontrolname="country" name="country">
+    <label for="motto" class="withMargin">Description of the wine</label>
+    <input type="text" id="motto" class="formControlStyle" formcontrolname="motto" name="motto">
+    <label for="price" class="withMargin">Price*</label>
+    <input type="number" id="price" class="formControlStyle" formcontrolname="price" name="price">
+    <div class="message--error">
+      <p *ngIf="(newWineForm.get('price')?.dirty || newWineForm.get('price')?.touched) && newWineForm.get('price')?.errors?.required">The wine price is required</p>
+    </div>
+    <label for="rating" class="withMargin">Predefined rating (1 to 5)</label>
+    <input type="number" id="rating" class="formControlStyle" formcontrolname="rating" name="rating">
+    <label for="isOnSale" class="withMargin">Is on sale</label>
+    <input type="checkbox" id="isonSale" class="formControl withMargin" formcontrolname="isOnSale" name="isonSale">
+    <fieldset class="formFieldset">
+      <legend>Matching food</legend>
+      <label for="foodMatch">Food description</label>
+      <input type="text" id="foodMatch" class="formControl fullWidth" formcontrolname="foodMatch" name="foodMatch">
+      <label for="foodKcal">Approximate calories for 1 portion</label>
+      <input type="number" id="foodKcal" class="formControl fullWidth" formcontrolname="foodKcal" name="foodKcal">
+      <label for="foodVegan">Is it vegan?</label>
+      <input type="checkbox" id="foodVegan" class="formControlStyle" formcontrolname="foodVegan" name="foodVegan">
+      <label for="foodGluten">Does it contain gluten?</label>
+      <input type="checkbox" id="foodGluten" class="formControlStyle" formcontrolname="foodGluten" name="foodGluten">
+    </fieldset>
+    <button type="submit">Create new wine</button>
+    <h2 class="{{ this.messages.class }}">{{ this.messages.current }}</h2>
+    <div class="dev__information">
+      <h2>Only for development and check purposes</h2>
+      <p class="secondary noMargin">Form value:</p>
+      <p class="secondary noMargin">{{ newWineForm.value | json }}</p>
+    </div>
+  </div>
+</form>

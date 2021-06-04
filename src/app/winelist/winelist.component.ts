@@ -1,36 +1,41 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { IWineItem, IProductChange } from 'src/interfaces/items.interfaces';
-import { ProductsService } from './../../services/products.service';
+import { WineService } from './../../services/wine.service';
+// import { ProductsService } from './../../services/products.service';
 
 @Component({
   selector: 'app-winelist',
   templateUrl: './winelist.component.html',
-  styleUrls: ['./winelist.component.sass']
+  styleUrls: ['./winelist.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WinelistComponent implements OnInit, OnDestroy {
+export class WinelistComponent {
   public products: IWineItem[] = [];
-  public filteredProducts: IWineItem[] = [];
+  public wines$: Observable<IWineItem[]>;
   public errorMessage:string = '';
-  public sub!: Subscription;
+  // public sub!: Subscription;
 
   constructor(
-    private productsService: ProductsService
-  ) {}
-
-  ngOnInit(): void {
-    this.sub = this.productsService.getProducts().subscribe({
-      next: products => {
-        this.products = [ ...products ];
-        this.filteredProducts = [ ...products ];
-      },
-      error: error => this.errorMessage = error
-    });
+    // private productsService: ProductsService,
+    private wineService: WineService
+  ) {
+    this.wines$ = this.wineService.wines$;
   }
 
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
-  }
+  // ngOnInit(): void {
+  //   this.sub = this.productsService.getProducts().subscribe({
+  //     next: products => {
+  //       this.products = [ ...products ];
+  //       this.filteredProducts = [ ...products ];
+  //     },
+  //     error: error => this.errorMessage = error
+  //   });
+  // }
+
+  // ngOnDestroy(): void {
+  //   this.sub.unsubscribe();
+  // }
 
   onWineQuantityChange( WineQuantityChange: IProductChange ) {
     const selectedWine = this.products.find( wine => wine._id === WineQuantityChange.id );

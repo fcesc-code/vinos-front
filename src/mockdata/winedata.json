@@ -1,7 +1,7 @@
 [
   {
       "_id": 1,
-      "name": "CHATEAU DE SAINT COSME",
+      "title": "CHATEAU DE SAINT COSME",
       "year": 2009,
       "rating": 5,
       "grapes": "Grenache / Syrah",
@@ -13,13 +13,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -29,7 +29,7 @@
   },
   {
       "_id": 2,
-      "name": "LAN RIOJA CRIANZA",
+      "title": "LAN RIOJA CRIANZA",
       "year": 2006,
       "rating": 4,
       "grapes": "Tempranillo",
@@ -41,13 +41,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -57,7 +57,7 @@
   },
   {
       "_id": 3,
-      "name": "MARGERUM SYBARITE",
+      "title": "MARGERUM SYBARITE",
       "year": 2010,
       "rating": 3,
       "grapes": "Sauvignon Blanc",
@@ -69,13 +69,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -85,7 +85,7 @@
   },
   {
       "_id": 4,
-      "name": "OWEN ROE \"EX UMBRIS\"",
+      "title": "OWEN ROE \"EX UMBRIS\"",
       "year": 2009,
       "rating": 2.75,
       "grapes": "Syrah",
@@ -97,13 +97,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -113,7 +113,7 @@
   },
   {
       "_id": 5,
-      "name": "REX HILL",
+      "title": "REX HILL",
       "year": 2009,
       "rating": 4,
       "grapes": "Pinot Noir",
@@ -125,13 +125,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -141,7 +141,7 @@
   },
   {
       "_id": 6,
-      "name": "VITICCIO CLASSICO RISERVA",
+      "title": "VITICCIO CLASSICO RISERVA",
       "year": 2007,
       "rating": 5,
       "grapes": "Sangiovese Merlot",
@@ -153,13 +153,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -169,7 +169,7 @@
   },
   {
       "_id": 7,
-      "name": "CHATEAU LE DOYENNE",
+      "title": "CHATEAU LE DOYENNE",
       "year": 2005,
       "rating": 4.6,
       "grapes": "Merlot",
@@ -181,13 +181,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -197,7 +197,7 @@
   },
   {
       "_id": 8,
-      "name": "DOMAINE DU BOUSCAT",
+      "title": "DOMAINE DU BOUSCAT",
       "year": 2009,
       "rating": 4.85,
       "grapes": "Merlot",
@@ -209,13 +209,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -225,7 +225,7 @@
   },
   {
       "_id": 9,
-      "name": "BLOCK NINE",
+      "title": "BLOCK NINE",
       "year": 2009,
       "rating": 3.7,
       "grapes": "Pinot Noir",
@@ -237,13 +237,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -253,7 +253,7 @@
   },
   {
       "_id": 10,
-      "name": "DOMAINE SERENE",
+      "title": "DOMAINE SERENE",
       "year": 2007,
       "rating": 3.6,
       "grapes": "Pinot Noir",
@@ -265,13 +265,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -281,7 +281,7 @@
   },
   {
       "_id": 11,
-      "name": "BODEGA LURTON",
+      "title": "BODEGA LURTON",
       "year": 2011,
       "rating": 4.35,
       "grapes": "Pinot Gris",
@@ -293,13 +293,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -309,7 +309,7 @@
   },
   {
       "_id": 12,
-      "name": "LES MORIZOTTES",
+      "title": "LES MORIZOTTES",
       "year": 2009,
       "rating": 4.4,
       "grapes": "Chardonnay",
@@ -321,13 +321,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -337,7 +337,7 @@
   },
   {
       "_id": 13,
-      "name": "ARGIANO NON CONFUNDITUR",
+      "title": "ARGIANO NON CONFUNDITUR",
       "year": 2009,
       "rating": 4.65,
       "grapes": "Cabernet Sauvignon",
@@ -349,13 +349,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -365,7 +365,7 @@
   },
   {
       "_id": 14,
-      "name": "DINASTIA VIVANCO ",
+      "title": "DINASTIA VIVANCO ",
       "year": 2008,
       "rating": 4.7,
       "grapes": "Tempranillo",
@@ -377,13 +377,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -393,7 +393,7 @@
   },
   {
       "_id": 15,
-      "name": "PETALOS BIERZO",
+      "title": "PETALOS BIERZO",
       "year": 2009,
       "rating": 4.55,
       "grapes": "Mencia",
@@ -405,13 +405,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -421,7 +421,7 @@
   },
   {
       "_id": 16,
-      "name": "SHAFER RED SHOULDER RANCH",
+      "title": "SHAFER RED SHOULDER RANCH",
       "year": 2009,
       "rating": 4.2,
       "grapes": "Chardonnay",
@@ -433,13 +433,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -449,7 +449,7 @@
   },
   {
       "_id": 17,
-      "name": "PONZI",
+      "title": "PONZI",
       "year": 2010,
       "rating": 3.85,
       "grapes": "Pinot Gris",
@@ -461,13 +461,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -477,7 +477,7 @@
   },
   {
       "_id": 18,
-      "name": "HUGEL",
+      "title": "HUGEL",
       "year": 2010,
       "rating": 3.9,
       "grapes": "Pinot Gris",
@@ -489,13 +489,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -505,7 +505,7 @@
   },
   {
       "_id": 19,
-      "name": "FOUR VINES MAVERICK",
+      "title": "FOUR VINES MAVERICK",
       "year": 2011,
       "rating": 3,
       "grapes": "Zinfandel",
@@ -517,13 +517,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -533,7 +533,7 @@
   },
   {
       "_id": 20,
-      "name": "QUIVIRA DRY CREEK VALLEY",
+      "title": "QUIVIRA DRY CREEK VALLEY",
       "year": 2009,
       "rating": 2.9,
       "grapes": "Zinfandel",
@@ -545,13 +545,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -561,7 +561,7 @@
   },
   {
       "_id": 21,
-      "name": "CALERA 35TH ANNIVERSARY",
+      "title": "CALERA 35TH ANNIVERSARY",
       "year": 2010,
       "rating": 4,
       "grapes": "Pinot Noir",
@@ -573,13 +573,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -589,7 +589,7 @@
   },
   {
       "_id": 22,
-      "name": "CHATEAU CARONNE STE GEMME",
+      "title": "CHATEAU CARONNE STE GEMME",
       "year": 2010,
       "rating": 4.95,
       "grapes": "Cabernet Sauvignon",
@@ -601,13 +601,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -617,7 +617,7 @@
   },
   {
       "_id": 22,
-      "name": "MOMO MARLBOROUGH",
+      "title": "MOMO MARLBOROUGH",
       "year": 2010,
       "rating": 2.8,
       "grapes": "Sauvignon Blanc",
@@ -629,13 +629,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false
@@ -645,7 +645,7 @@
   },
   {
       "_id": 23,
-      "name": "WATERBROOK",
+      "title": "WATERBROOK",
       "year": 2009,
       "rating": 4.15,
       "grapes": "Merlot",
@@ -657,13 +657,13 @@
       "quantityInCart": 0, 
       "foodMatch": [
     {
-      "name": "Manchego cheese",
+      "title": "Manchego cheese",
       "kcal": 320,
       "vegan": false,
       "gluten": false
     },
     {
-      "name": "Jamón Ibérico",
+      "title": "Jamón Ibérico",
       "kcal": 450,
       "vegan": false,
       "gluten": false

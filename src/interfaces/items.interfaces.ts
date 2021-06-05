@@ -1,6 +1,6 @@
 export interface IWineItem {
   _id: number;
-  title: string;
+  name: string;
   year: number;
   rating: number;
   grapes: string;

@@ -1,7 +1,7 @@
 # Vinos
 
 ## Purpose
-The aim of this PEC4-exercise is to build a small wine app, as part of a University 
+The aim of this PEC4, PEC5, PEC6 and PEC7-exercise is to build a small wine app, as part of a University 
 [Web apps and sites development Master](https://estudis.uoc.edu/ca/masters-universitaris/desenvolupament-llocs-aplicacions-web/presentacio) 
 by [Universitat Oberta de Catalunya](http://uoc.edu). \
 Subject: Front-end with frameworks JS I. April 2021.

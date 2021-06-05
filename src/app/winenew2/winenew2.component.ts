@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IWineItem } from '../../interfaces/items.interfaces';
+import { WineService } from '../../services/wine.service';
 
 @Component({
   selector: 'app-winenew2',
@@ -22,10 +23,13 @@ export class Winenew2Component {
   private URLpattern = new RegExp(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/);
   private Namepattern = new RegExp(/`Laya|K-Naina|Verdejo|Monastrell`/);
 
-  constructor( private formBuilder: FormBuilder ) {
+  constructor( 
+    private formBuilder: FormBuilder,
+    private wineService: WineService
+  ) {
     this.wine = {
       _id: 0,
-      title: '',
+      name: '',
       year: 0,
       rating: 0,
       grapes: '',
@@ -48,7 +52,7 @@ export class Winenew2Component {
         [Validators.required,
         Validators.pattern(this.URLpattern)]
       ],
-      title: [
+      name: [
         '',
         [Validators.required,
         Validators.pattern(this.Namepattern)]
@@ -79,6 +83,7 @@ export class Winenew2Component {
   }
 
   public createWine(){
+    console.warn('ENTERED CREATEWINE METHOD - FORM')
     if (this.newWineForm.invalid) {
       this.messages.current = this.messages.createError;
       this.messages.class = this.messages.classError;
@@ -86,7 +91,8 @@ export class Winenew2Component {
       this.messages.current = this.messages.createSuccess;
       this.messages.class = this.messages.classSuccess;
       this.wine = this.newWineForm.value;
-      console.warn('PAC5 temporary. This is the new wine', this.wine);
+      console.warn('HURRAH! This is the new wine:', this.wine);
+      this.wineService.createWine( this.wine );
     }
   }
 

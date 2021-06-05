@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IWineItem, IProductChange } from 'src/interfaces/items.interfaces';
-import { WineService } from './../../services/wine.service';
+import { WineService } from '../../services/wine.service';
 
 @Component({
   selector: 'app-winelist',

@@ -21,7 +21,6 @@ export class Winenew2Component {
     class: ''
   }
   private URLpattern = new RegExp(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/);
-  private Namepattern = new RegExp(/`Laya|K-Naina|Verdejo|Monastrell`/);
 
   constructor( 
     private formBuilder: FormBuilder,
@@ -54,8 +53,7 @@ export class Winenew2Component {
       ],
       name: [
         '',
-        [Validators.required,
-        Validators.pattern(this.Namepattern)]
+        Validators.required
       ],
       year: [
         0,
@@ -83,7 +81,8 @@ export class Winenew2Component {
   }
 
   public createWine(){
-    console.warn('ENTERED CREATEWINE METHOD - FORM')
+    console.log('FORM-createWine ---> called')
+    console.log(`FORM-createWine ---> valid: ${this.newWineForm.valid}, pristine: ${this.newWineForm.pristine}, untouched: ${this.newWineForm.untouched}`)
     if (this.newWineForm.invalid) {
       this.messages.current = this.messages.createError;
       this.messages.class = this.messages.classError;
@@ -91,9 +90,10 @@ export class Winenew2Component {
       this.messages.current = this.messages.createSuccess;
       this.messages.class = this.messages.classSuccess;
       this.wine = this.newWineForm.value;
-      console.warn('HURRAH! This is the new wine:', this.wine);
+      console.log('FORM-createWine ---> HURRAH! This is the new wine:', this.wine);
       this.wineService.createWine( this.wine );
     }
+    console.log('FORM-createWine ---> method ended');
   }
 
 }

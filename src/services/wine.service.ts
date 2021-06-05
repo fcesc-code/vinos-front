@@ -8,6 +8,7 @@ import { mockWines } from '../mockdata/winedata';
   providedIn: 'root'
 })
 export class WineService {
+  private wineItemsLast: IWineItem[] | [] = [];
   protected wineItems: IWineItem[];
 
   constructor() {
@@ -21,14 +22,14 @@ export class WineService {
   public createWine( wine: IWineItem ): void {
     const newWine = {
       ...wine,
-      id: this.wineItems.length + 1
+      _id: this.wineItems.length
     }
-    console.warn('SERVICE-create / pre:', this.wineItems.length);
+    this.cacheLastState();
     this.wineItems.push(newWine);
-    console.warn('SERVICE-create / post', this.wineItems.length );
   }
 
   public deleteWine( wineId: number ): void {
+    this.cacheLastState();
     this.wineItems = [ ...this.wineItems.filter( ({ _id }) => _id !== wineId ) ];
   }
 
@@ -40,14 +41,24 @@ export class WineService {
     const editedWine: IWineItem = {
       ...wine
     }
+    this.cacheLastState();
     this.wineItems = [ ...this.wineItems.map( wine => ( wine._id === editedWine._id ) ? editedWine : wine ) ];
   }
 
   public changeQuantity( wineId: number, newQuantity: number ): void {
+    this.cacheLastState();
     const selectedWine = this.wineItems.find( ({_id}) => _id === wineId );
     if( selectedWine ){
       selectedWine.quantityInCart = newQuantity;
     }
+  }
+
+  private cacheLastState(): void{
+    this.wineItemsLast = this.wineItems;
+  }
+
+  public undo(): void{
+    this.wineItems = this.wineItemsLast;
   }
 
 }

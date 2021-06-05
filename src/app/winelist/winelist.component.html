@@ -1,11 +1,7 @@
 <div class="wine__list">
   <div *ngIf="wines$ | async as products">
     <div *ngFor="let product of products">
-      <app-wineitem [wine]="product"></app-wineitem>
-      <!--<app-wineitem [wine]="product" (wineQuantityChange)="onWineQuantityChange($event)"></app-wineitem>-->
+      <app-wineitem [wine]="product" (wineQuantityChange)="onWineQuantityChange($event)"></app-wineitem>
     </div>
-  </div>
-  <div>
-    <app-winenew2></app-winenew2>
   </div>
 </div>

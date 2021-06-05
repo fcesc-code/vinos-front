@@ -18,7 +18,7 @@ export class WineitemComponent implements OnInit {
   constructor() {
     this.wine = {
       _id: 0,
-      title: '',
+      name: '',
       year: 0,
       rating: 0,
       grapes: '',

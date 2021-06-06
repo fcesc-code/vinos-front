@@ -1,5 +1,5 @@
 {
-  "name": "vinos",
+  "name": "vinos-frontend",
   "description": "Vinoteca, una app de vinos en Angular",
   "version": "0.0.0",
   "scripts": {

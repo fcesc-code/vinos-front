@@ -81,8 +81,6 @@ export class Winenew2Component {
   }
 
   public createWine(){
-    console.log('FORM-createWine ---> called')
-    console.log(`FORM-createWine ---> valid: ${this.newWineForm.valid}, pristine: ${this.newWineForm.pristine}, untouched: ${this.newWineForm.untouched}`)
     if (this.newWineForm.invalid) {
       this.messages.current = this.messages.createError;
       this.messages.class = this.messages.classError;
@@ -90,10 +88,8 @@ export class Winenew2Component {
       this.messages.current = this.messages.createSuccess;
       this.messages.class = this.messages.classSuccess;
       this.wine = this.newWineForm.value;
-      console.log('FORM-createWine ---> HURRAH! This is the new wine:', this.wine);
       this.wineService.createWine( this.wine );
     }
-    console.log('FORM-createWine ---> method ended');
   }
 
 }

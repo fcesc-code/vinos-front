@@ -16,34 +16,31 @@ export class WineService {
   ) { }
 
   public getWines(): Observable<IWineItem[]> {
-    return this.http.get<IWineItem[]>(this.api);
+    return this.http.get<IWineItem[]>(this.api)
+  }
+
+  public getWine( wineId: number ): Observable<IWineItem> {
+    return this.http.get<IWineItem>(`${this.api}/${wineId}`)
   }
 
   public createWine( wine: IWineItem ): Observable<IWineItem> {
     return this.http.post<IWineItem>(this.api, wine)
   }
 
-  // public deleteWine( wineId: number ): Observable<IWineItem[]> {
-  //   this.cacheLastState();
-  //   this.wineItems = [ ...this.wineItems.filter( ({ _id }) => _id !== wineId ) ];
-  //   return of(this.wineItems);
-  // }
+  public deleteWine( wineId: number ): Observable<Object> {
+    return this.http.delete<Object>(`${this.api}/${wineId}`)
+  }
 
-  // public getWine( wineId: number ): Observable<IWineItem | undefined> {
-  //   return of(this.wineItems.find( ({ _id }) => _id === wineId ))
-  // }
+  public getFilteredWines( parameter: string, value: string ): Observable<IWineItem[]> {
+    return this.http.get<IWineItem[]>(`${this.api}/${parameter}/${value}`)
+  }
 
-  // public editWine( wine: IWineItem ): Observable<IWineItem[]> {
-  //   const editedWine: IWineItem = {
-  //     ...wine
-  //   }
-  //   this.cacheLastState();
-  //   this.wineItems = [ ...this.wineItems.map( wine => ( wine._id === editedWine._id ) ? editedWine : wine ) ];
-  //   return of(this.wineItems);
-  // }
+  public editWine( wine: IWineItem ): Observable<IWineItem> {
+    return this.http.patch<IWineItem>(`${this.api}/edit/${wine._id}`, wine)
+  }
 
-  public changeQuantity( wineId: number, newQuantity: number ): Observable<IWineItem> {
-    return this.http.patch<IWineItem>(`${this.api}/${wineId}`, { quantityInCart: newQuantity });
+  public editQuantity( wineId: number, newQuantity: number ): Observable<IWineItem> {
+    return this.http.patch<IWineItem>(`${this.api}/${wineId}`, { quantityInCart: newQuantity })
   }
 
 }

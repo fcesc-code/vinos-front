@@ -1,7 +1,7 @@
 const CONFIG = {
   protocol: 'http',
   host: 'localhost',
-  port: '3000',
+  port: '3010',
   path: 'api',
   route: 'wine'
 }

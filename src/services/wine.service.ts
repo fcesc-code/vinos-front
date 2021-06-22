@@ -40,7 +40,7 @@ export class WineService {
   }
 
   public editWine( wine: IWineItem ): Observable<IWineItem> {
-    return this.http.patch<IWineItem>(`${this.api}/edit/${wine._id}`, wine)
+    return this.http.patch<IWineItem>(`${this.api}/edit`, wine)
   }
 
   public editQuantity( wineId: number, newQuantity: number ): Observable<IWineItem> {

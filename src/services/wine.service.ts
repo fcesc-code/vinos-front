@@ -19,6 +19,10 @@ export class WineService {
     return this.http.get<IWineItem[]>(this.api)
   }
 
+  public getPaginatedWines( page: number ): Observable<IWineItem[]> {
+    return this.http.get<IWineItem[]>(`${this.api}/all/${page}`)
+  }
+
   public getWine( wineId: number ): Observable<IWineItem> {
     return this.http.get<IWineItem>(`${this.api}/${wineId}`)
   }

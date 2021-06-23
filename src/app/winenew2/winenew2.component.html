@@ -46,10 +46,12 @@
     </fieldset>
     <button type="submit" [disabled]="!newWineForm.valid">Create new wine</button>
     <h2 class="{{ this.messages.class }}">{{ this.messages.current }}</h2>
+    <!--
     <div class="dev__information">
       <h2>Only for development and check purposes</h2>
       <p class="secondary noMargin">Form value:</p>
       <p class="secondary noMargin">{{ newWineForm.value | json }}</p>
     </div>
+    -->
   </div>
 </form>

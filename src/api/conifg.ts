@@ -6,4 +6,4 @@ const CONFIG = {
   route: 'wine'
 }
 
-export const API_ENDPOINT: string = `${CONFIG.protocol}://${CONFIG.host}:${CONFIG.port}/${CONFIG.path}/${CONFIG.route}`;
+export const API_ENDPOINT: string = `${CONFIG.protocol}://${CONFIG.host}:${CONFIG.port}/${CONFIG.path}/${CONFIG.route}/`;

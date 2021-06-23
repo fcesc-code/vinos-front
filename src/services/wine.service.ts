@@ -9,18 +9,28 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class WineService {
-  private api: string = API_ENDPOINT;
-
+  private api: string = '';
+  
   constructor(
     private http: HttpClient
-  ) { }
+    ) { 
+      this.api = API_ENDPOINT;
+    }
 
   public getWines(): Observable<IWineItem[]> {
     return this.http.get<IWineItem[]>(this.api)
   }
 
+  public getWinesQuery( query: string ): Observable<IWineItem[]> {
+    const formattedQuery = query.trim().toLowerCase();
+    const queryParameters = { params: { q: formattedQuery } };
+    return (formattedQuery && formattedQuery !== '')
+      ? this.http.get<IWineItem[]>(`${this.api}`, queryParameters)
+      : this.getWines();
+  }
+
   public getPaginatedWines( page: number ): Observable<IWineItem[]> {
-    return this.http.get<IWineItem[]>(`${this.api}/page/${page}` )
+    return this.http.get<IWineItem[]>(`${this.api}/page/${page}`)
   }
 
   public getWine( wineId: number ): Observable<IWineItem> {

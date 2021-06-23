@@ -1,5 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  share,
+  startWith,
+  switchMap,
+} from "rxjs/internal/operators";
 import { IWineItem, IProductChange } from 'src/interfaces/items.interfaces';
 import { WineService } from '../../services/wine.service';
 
@@ -11,6 +18,8 @@ import { WineService } from '../../services/wine.service';
 })
 export class WinelistComponent {
   public wines$: Observable<IWineItem[]>;
+  public searchString: string = '';
+  private searchTerms: Subject<string> = new Subject();
 
   constructor(
     private wineService: WineService
@@ -19,10 +28,24 @@ export class WinelistComponent {
   }
 
   ngOnInit(): void {
-    this.wines$ = this.wineService.getWines();
+    this.getQueryWines();
   }
 
   onWineQuantityChange( WineQuantityChange: IProductChange ): void {
     this.wineService.changeQuantity( WineQuantityChange.id, WineQuantityChange.newQuantity);
+  }
+
+  search() {
+    this.searchTerms.next( this.searchString );
+  }
+
+  getQueryWines() {
+    this.wines$ = this.searchTerms.pipe(
+      startWith(this.searchString),
+      debounceTime(500),
+      distinctUntilChanged(),
+      switchMap( (query: string) => this.wineService.getWinesQuery(query) ),
+      share()
+    );
   }
 }

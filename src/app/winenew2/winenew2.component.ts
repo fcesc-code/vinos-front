@@ -87,8 +87,9 @@ export class Winenew2Component {
     } else {
       this.messages.current = this.messages.createSuccess;
       this.messages.class = this.messages.classSuccess;
-      this.wine = this.newWineForm.value;
-      this.wineService.createWine( this.wine );
+      const newWine: IWineItem = this.newWineForm.value;
+      this.wine = newWine;
+      this.wineService.createWine( newWine );
     }
   }
 

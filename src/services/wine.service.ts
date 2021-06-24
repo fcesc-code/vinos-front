@@ -19,7 +19,6 @@ export class WineService {
     }
 
   public getWines(): Observable<IWineItem[]> {
-    console.warn('wineService -> getWines called')
     this.http.post(this.api, { something: 'yes' })
     return this.http.get<IWineItem[]>(this.api)
       .pipe( retry(2),
@@ -28,7 +27,6 @@ export class WineService {
   }
 
   public getWinesQuery( query: string ): Observable<IWineItem[]> {
-    console.warn('wineService -> getWinesQuery called')
     const formattedQuery = query.trim().toLowerCase();
     const queryParameters = { params: { q: formattedQuery } };
     return (formattedQuery && formattedQuery !== '')

@@ -3,10 +3,11 @@ import { Observable, Subject } from 'rxjs';
 import {
   debounceTime,
   distinctUntilChanged,
+  merge,
   share,
   startWith,
   switchMap,
-} from "rxjs/internal/operators";
+} from "rxjs/operators";
 import { IWineItem, IProductChange } from 'src/interfaces/items.interfaces';
 import { WineService } from '../../services/wine.service';
 
@@ -20,6 +21,7 @@ export class WinelistComponent {
   public wines$: Observable<IWineItem[]>;
   public searchString: string = '';
   private searchTerms: Subject<string> = new Subject();
+  private reloadWineList : Subject<string> = new Subject();
 
   constructor(
     private wineService: WineService
@@ -32,23 +34,28 @@ export class WinelistComponent {
   }
 
   onWineQuantityChange( WineQuantityChange: IProductChange ): void {
-    this.wineService.changeQuantity( WineQuantityChange.id, WineQuantityChange.newQuantity);
+    this.wineService.changeQuantityInCart( WineQuantityChange.id, WineQuantityChange.newQuantity);
   }
 
   search() {
+    console.log(`Current query string: '${this.searchString}'`)
+
     this.searchTerms.next( this.searchString );
   }
 
   getQueryWines() {
-    console.log(`Current query string: '${this.searchString}'`)
-    this.wines$ = ( this.searchString && this.searchString !== '' ) 
-      ? this.searchTerms.pipe(
-        startWith(this.searchString),
-        debounceTime(500),
-        distinctUntilChanged(),
-        switchMap( (query: string) => this.wineService.getWinesQuery(query) ),
-        share()
-        )
-      : this.wineService.getWines();
+    this.wines$ = this.searchTerms.pipe(
+      startWith(this.searchString),
+      debounceTime(500),
+      distinctUntilChanged(),
+      merge(this.reloadWineList),
+      switchMap( (query: string) => { return ( query && query.trim() !== '' ) ? this.wineService.getWinesQuery(query) : this.wineService.getWines() } ),
+      share()
+    );
   }
+
+  onNew() {
+    this.reloadWineList.next();
+  }
+
 }

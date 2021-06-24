@@ -1,5 +1,5 @@
 <form class="centeredForm" (ngSubmit)="createWine()" [formGroup]="newWineForm">
-  <div class="wine__card" ngModelGroup="newWine">
+  <div class="wine__card">
     <h2 class="wineForm__title">New wine (reactive form)</h2>
     <p class="secondary">* Required fields</p>
     <label for="imgUrl" class="withMargin">ImgUrl*</label>
@@ -46,10 +46,12 @@
     </fieldset>
     <button type="submit" [disabled]="!newWineForm.valid">Create new wine</button>
     <h2 class="{{ this.messages.class }}">{{ this.messages.current }}</h2>
+    <!--
     <div class="dev__information">
       <h2>Only for development and check purposes</h2>
       <p class="secondary noMargin">Form value:</p>
       <p class="secondary noMargin">{{ newWineForm.value | json }}</p>
     </div>
+    -->
   </div>
 </form>

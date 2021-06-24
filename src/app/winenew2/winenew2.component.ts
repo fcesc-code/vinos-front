@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IWineItem } from '../../interfaces/items.interfaces';
 import { WineService } from '../../services/wine.service';
@@ -10,6 +10,8 @@ import { WineService } from '../../services/wine.service';
 })
 
 export class Winenew2Component {
+  @Output() private outputWine: EventEmitter<void> = new EventEmitter;
+
   public newWineForm: FormGroup;
   public wine: IWineItem;
   public messages = {
@@ -73,10 +75,6 @@ export class Winenew2Component {
         Validators.max(5)]
       ],
       isOnSale: false,
-      foodMatch: '',
-      foodKcal: 0,
-      foodVegan: false,
-      foodGluten: false
     });
   }
 
@@ -89,7 +87,16 @@ export class Winenew2Component {
       this.messages.class = this.messages.classSuccess;
       const newWine: IWineItem = this.newWineForm.value;
       this.wine = newWine;
-      this.wineService.createWine( newWine );
+      this.wineService.createWine( newWine )
+        .subscribe( 
+          ( message ) => {
+            console.log( message );
+            this.outputWine.next();
+          },
+          ( error ) => { 
+            console.error(error);
+          }
+         );
     }
   }
 

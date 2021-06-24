@@ -2,10 +2,10 @@
   <div class=".main_container">
     <app-header></app-header>
     <article>
-      <app-winenew2></app-winenew2>
+      <app-winelist #wineList></app-winelist>
     </article>
     <article>
-      <app-winelist></app-winelist>
+      <app-winenew2 (outputWine)="wineList.onNew()"></app-winenew2>
     </article>
     <app-footer></app-footer>
   </div>

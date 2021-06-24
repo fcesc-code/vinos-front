@@ -40,12 +40,15 @@ export class WinelistComponent {
   }
 
   getQueryWines() {
-    this.wines$ = this.searchTerms.pipe(
-      startWith(this.searchString),
-      debounceTime(500),
-      distinctUntilChanged(),
-      switchMap( (query: string) => this.wineService.getWinesQuery(query) ),
-      share()
-    );
+    console.log(`Current query string: '${this.searchString}'`)
+    this.wines$ = ( this.searchString && this.searchString !== '' ) 
+      ? this.searchTerms.pipe(
+        startWith(this.searchString),
+        debounceTime(500),
+        distinctUntilChanged(),
+        switchMap( (query: string) => this.wineService.getWinesQuery(query) ),
+        share()
+        )
+      : this.wineService.getWines();
   }
 }

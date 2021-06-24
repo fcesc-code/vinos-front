@@ -32,23 +32,22 @@ export class WinelistComponent {
   }
 
   onWineQuantityChange( WineQuantityChange: IProductChange ): void {
-    this.wineService.changeQuantity( WineQuantityChange.id, WineQuantityChange.newQuantity);
+    this.wineService.changeQuantityInCart( WineQuantityChange.id, WineQuantityChange.newQuantity);
   }
 
   search() {
+    console.log(`Current query string: '${this.searchString}'`)
+
     this.searchTerms.next( this.searchString );
   }
 
   getQueryWines() {
-    console.log(`Current query string: '${this.searchString}'`)
-    this.wines$ = ( this.searchString && this.searchString !== '' ) 
-      ? this.searchTerms.pipe(
-        startWith(this.searchString),
-        debounceTime(500),
-        distinctUntilChanged(),
-        switchMap( (query: string) => this.wineService.getWinesQuery(query) ),
-        share()
-        )
-      : this.wineService.getWines();
+    this.wines$ = this.searchTerms.pipe(
+      startWith(this.searchString),
+      debounceTime(500),
+      distinctUntilChanged(),
+      switchMap( (query: string) => { return ( query && query.trim() !== '' ) ? this.wineService.getWinesQuery(query) : this.wineService.getWines() } ),
+      share()
+    );
   }
 }

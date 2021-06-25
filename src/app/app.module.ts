@@ -13,6 +13,8 @@ import { WinelistComponent } from './winelist/winelist.component';
 import { Winenew2Component } from './winenew2/winenew2.component';
 import { StarComponent } from './star/star.component';
 
+import { WineImagePipe } from '../pipes/wine-image.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { StarComponent } from './star/star.component';
     WineitemComponent,
     WinelistComponent,
     Winenew2Component,
-    StarComponent
+    StarComponent,
+    WineImagePipe
   ],
   imports: [
     BrowserModule,

@@ -9,9 +9,9 @@ import { IWineItem, IProductChange } from '../../interfaces/items.interfaces';
 })
 
 export class WineitemComponent implements OnInit {
-
   @Input() public wine: IWineItem;
   @Output() public wineQuantityChange: EventEmitter<IProductChange> = new EventEmitter();
+
   public totalAmount: number = 0;
   public wineRegionMapLink: string  = '';
 

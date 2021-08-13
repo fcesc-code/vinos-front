@@ -10,7 +10,7 @@ import { WineService } from '../../services/wine.service';
 })
 
 export class Winenew2Component {
-  @Output() private outputWine: EventEmitter<void> = new EventEmitter;
+  @Output() private outputWine: EventEmitter<void> = new EventEmitter();
 
   public newWineForm: FormGroup;
   public wine: IWineItem;
@@ -21,13 +21,13 @@ export class Winenew2Component {
     classSuccess: 'messsage message--success',
     current: '',
     class: ''
-  }
+  };
   private URLpattern = new RegExp(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/);
 
-  constructor( 
+  constructor(
     private formBuilder: FormBuilder,
     private wineService: WineService
-  ) {
+  ){
     this.wine = {
       _id: 0,
       name: '',
@@ -42,11 +42,11 @@ export class Winenew2Component {
       isOnSale: false,
       quantityInCart: 0,
       foodMatch: []
-    }
+    };
     this.newWineForm = this.createNewWineForm();
   }
 
-  private createNewWineForm(){
+  private createNewWineForm(): any {
     return this.formBuilder.group({
       imgUrl: [
         '',
@@ -70,7 +70,7 @@ export class Winenew2Component {
         Validators.min(1)]
       ],
       rating: [
-        '', 
+        '',
         [Validators.min(1),
         Validators.max(5)]
       ],
@@ -78,7 +78,7 @@ export class Winenew2Component {
     });
   }
 
-  public createWine(){
+  public createWine(): void {
     if (this.newWineForm.invalid) {
       this.messages.current = this.messages.createError;
       this.messages.class = this.messages.classError;
@@ -88,12 +88,12 @@ export class Winenew2Component {
       const newWine: IWineItem = this.newWineForm.value;
       this.wine = newWine;
       this.wineService.createWine( newWine )
-        .subscribe( 
+        .subscribe(
           ( message ) => {
             console.log( message );
             this.outputWine.next();
           },
-          ( error ) => { 
+          ( error ) => {
             console.error(error);
           }
          );

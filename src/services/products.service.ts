@@ -9,13 +9,11 @@ import { IWineItem } from '../interfaces/items.interfaces';
 })
 export class ProductsService {
   public items: IWineItem[] = [];
-  private mockdataUrl: string = 'mockdata/winedata.json';
+  private mockdataUrl = 'mockdata/winedata.json';
 
   constructor(
     private http: HttpClient
-  ) {}
-
-  ngOnInit(){
+  ) {
     this.getProducts();
   }
 
@@ -26,7 +24,7 @@ export class ProductsService {
       );
   }
 
-  private handleError( err: HttpErrorResponse ){
+  private handleError( err: HttpErrorResponse ): Observable<any> {
     let errorMessage = '';
     (err.error instanceof ErrorEvent)
       ? errorMessage = `An error ocurred: ${err.error.message}`

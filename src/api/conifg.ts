@@ -3,6 +3,6 @@ const CONFIG = {
   host: 'localhost',
   port: '3010',
   basePath: 'api/wine'
-}
+};
 
-export const API_ENDPOINT: string = `${CONFIG.protocol}://${CONFIG.host}:${CONFIG.port}/${CONFIG.basePath}`;
+export const API_ENDPOINT = `${CONFIG.protocol}://${CONFIG.host}:${CONFIG.port}/${CONFIG.basePath}`;

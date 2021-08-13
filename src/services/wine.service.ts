@@ -10,20 +10,20 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
   providedIn: 'root'
 })
 export class WineService {
-  private api: string = '';
-  
+  private api = '';
+
   constructor(
     private http: HttpClient
-    ) { 
+    ){
       this.api = API_ENDPOINT;
     }
 
   public getWines(): Observable<IWineItem[]> {
-    this.http.post(this.api, { something: 'yes' })
+    this.http.post(this.api, { something: 'yes' });
     return this.http.get<IWineItem[]>(this.api)
       .pipe( retry(2),
-        catchError(this.handleError) 
-      )
+        catchError(this.handleError)
+      );
   }
 
   public getWinesQuery( query: string ): Observable<IWineItem[]> {
@@ -32,65 +32,65 @@ export class WineService {
     return (formattedQuery && formattedQuery !== '')
       ? this.http.get<IWineItem[]>(`${this.api}`, queryParameters)
         .pipe( retry(2),
-          catchError(this.handleError) 
+          catchError(this.handleError)
         )
       : this.getWines();
   }
 
   public getPaginatedWines( page: number ): Observable<IWineItem[]> {
-    console.warn('wineService -> getPaginatedWines called')
+    console.warn('wineService -> getPaginatedWines called');
     return this.http.get<IWineItem[]>(`${this.api}/page/${page}`)
       .pipe( retry(2),
-        catchError(this.handleError) 
-      )
+        catchError(this.handleError)
+      );
   }
 
   public getWine( wineId: number ): Observable<IWineItem> {
-    console.warn('wineService -> getWine called')
+    console.warn('wineService -> getWine called');
     return this.http.get<IWineItem>(`${this.api}/${wineId}`)
       .pipe( retry(2),
-        catchError(this.handleError) 
-      )
+        catchError(this.handleError)
+      );
   }
 
   public createWine( wine: IWineItem ): Observable<IWineItem> {
-    console.warn('wineService -> createWine called with:', wine)
+    console.warn('wineService -> createWine called with:', wine);
     return this.http.post<IWineItem>(this.api, wine)
-      .pipe( catchError(this.handleError) )
+      .pipe( catchError(this.handleError) );
   }
 
-  public deleteWine( wineId: number ): Observable<Object> {
-    console.warn('wineService -> deleteWine called')
-    return this.http.delete<Object>(`${this.api}/${wineId}`)
-      .pipe( catchError(this.handleError) )
+  public deleteWine( wineId: number ): Observable<object> {
+    console.warn('wineService -> deleteWine called');
+    return this.http.delete<object>(`${this.api}/${wineId}`)
+      .pipe( catchError(this.handleError) );
   }
 
   public getFilteredWines( parameter: string, value: string ): Observable<IWineItem[]> {
-    console.warn('wineService -> getFilteredWines called')
+    console.warn('wineService -> getFilteredWines called');
     return this.http.get<IWineItem[]>(`${this.api}/${parameter}/${value}`)
       .pipe( retry(2),
-        catchError(this.handleError) 
-      )
+        catchError(this.handleError)
+      );
   }
 
   public editWine( wine: IWineItem ): Observable<IWineItem> {
-    console.warn('wineService -> editWine called')
+    console.warn('wineService -> editWine called');
     return this.http.patch<IWineItem>(`${this.api}/edit`, wine)
-      .pipe( catchError(this.handleError) )
+      .pipe( catchError(this.handleError) );
   }
 
   public changeQuantityInCart( wineId: number, newQuantity: number ): Observable<IWineItem> {
-    console.warn('wineService -> changeQuantityInCart called')
+    console.warn('wineService -> changeQuantityInCart called');
     return this.http.patch<IWineItem>(`${this.api}/${wineId}`, { quantityInCart: newQuantity })
-      .pipe( catchError(this.handleError) )
+      .pipe( catchError(this.handleError) );
   }
 
-  private handleError( error: HttpErrorResponse ){
+  private handleError( error: HttpErrorResponse ): Observable<any> {
     ( error.status === 0 )
       // A client-side or network error occurred.
       ? console.error(`An error ocurred:`, error.error)
       // The backend returned an unsuccessful response code. The response body main contain clues as to what went wrong.
-      : console.error(`Backend returned code ${error.status}, \nbody was: ${error.error}`)
+      : console.error(`Backend returned code ${error.status}, \nbody was: ${error.error}`);
     // return an observable with a user-facing error message
     return throwError(`Something bad happened; please try again later.`);
   }

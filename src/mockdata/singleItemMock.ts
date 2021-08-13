@@ -2,7 +2,7 @@ import { IWineItem } from 'src/interfaces/items.interfaces';
 
 const wineSingleMockData: IWineItem[] = [{
   "_id": 1,
-  "title": "CHATEAU DE SAINT COSME",
+  "name": "CHATEAU DE SAINT COSME",
   "year": 2009,
   "rating": 5,
   "grapes": "Grenache / Syrah",

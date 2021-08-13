@@ -12,8 +12,8 @@ export class WineitemComponent implements OnInit {
   @Input() public wine: IWineItem;
   @Output() public wineQuantityChange: EventEmitter<IProductChange> = new EventEmitter();
 
-  public totalAmount: number = 0;
-  public wineRegionMapLink: string  = '';
+  public totalAmount = 0;
+  public wineRegionMapLink  = '';
 
   constructor() {
     this.wine = {
@@ -30,16 +30,16 @@ export class WineitemComponent implements OnInit {
       isOnSale: false,
       quantityInCart: 0,
       foodMatch: []
-    }
+    };
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.wineRegionMapLink = `https://www.google.com/maps/place/${this.wine.region}`;
     this.totalAmount = this.wine.price * this.wine.quantityInCart;
   }
 
   private getChange(): IProductChange {
-    return { id: this.wine._id, newQuantity: this.wine.quantityInCart }
+    return { id: this.wine._id, newQuantity: this.wine.quantityInCart };
   }
 
   public increaseAmount(): void {
@@ -49,7 +49,7 @@ export class WineitemComponent implements OnInit {
   }
 
   public decreaseAmount(): void {
-    if (this.wine.quantityInCart > 0) this.wine.quantityInCart--;
+    if (this.wine.quantityInCart > 0) { this.wine.quantityInCart--; }
     this.totalAmount = this.wine.price * this.wine.quantityInCart;
     this.wineQuantityChange.emit( this.getChange() );
   }

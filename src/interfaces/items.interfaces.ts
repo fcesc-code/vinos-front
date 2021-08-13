@@ -22,6 +22,6 @@ interface IFoodItem {
 }
 
 export interface IProductChange {
-  id: number,
-  newQuantity: number
+  id: number;
+  newQuantity: number;
 }

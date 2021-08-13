@@ -26,7 +26,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm build
-    - run: npm run testAuto
+    - name: Install Angular Cli
+      uses: npm install angular-cli@latest
+    - name: build
+      run: npm build
+    - name: run tests
+      run: npm run testAuto
       env:
         CI: true

@@ -19,18 +19,26 @@ jobs:
         node-version: [14.x]
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Clone current repository
+      uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - name: Install Angular Cli
-      run: npm install @angular-cli
-    - name: build
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: npm-${{ hashFiles('package-lock.json') }}
+        restore-keys: npm-
+    - name: Install Dependencies
+      run: npm ci --ignore-scripts
+    - name: Install @angular/cli
+      run: npm install @angular/cli
+    - name: Build
       run: npm build
-    - name: run tests
+    - name: Run unit tests
       run: npm run testAuto
       env:
         CI: true

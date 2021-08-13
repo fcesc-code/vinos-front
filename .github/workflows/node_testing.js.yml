@@ -28,5 +28,5 @@ jobs:
     - run: npm ci
     - run: npm build
     - run: npm run testAuto
-    - env:
+      env:
         CI: true

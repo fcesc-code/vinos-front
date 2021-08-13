@@ -28,9 +28,9 @@ jobs:
     - run: npm ci
     - name: Install Angular Cli
       run: npm install @angular-cli
-    - name: build
+    - name: Build
       run: npm build
-    - name: run tests
+    - name: Run unit tests
       run: npm run testAuto
       env:
         CI: true

@@ -1,3 +1,4 @@
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WinelistComponent } from './winelist.component';
@@ -8,6 +9,7 @@ describe('WinelistComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      providers: [ HttpClient, HttpHandler ],
       declarations: [ WinelistComponent ]
     })
     .compileComponents();

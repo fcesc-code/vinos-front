@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WineitemComponent } from './wineitem.component';
+
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('WineitemComponent', () => {
   let component: WineitemComponent;
@@ -8,7 +9,8 @@ describe('WineitemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WineitemComponent ]
+      declarations: [ WineitemComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
   });

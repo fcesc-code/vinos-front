@@ -1,4 +1,6 @@
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
 
 import { Winenew2Component } from './winenew2.component';
 
@@ -8,6 +10,7 @@ describe('WinenewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      providers: [ FormBuilder, HttpClient, HttpHandler ],
       declarations: [ Winenew2Component ]
     })
     .compileComponents();
